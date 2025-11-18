@@ -95,7 +95,7 @@ const BatchGeminiAnalysis: React.FC<BatchGeminiAnalysisProps> = ({ results, onAn
           formData.append('api_key', apiKey);
           formData.append('video', videoResult.file);
           
-          const vibeResponse = await fetch('http://localhost:5001/api/gemini/vibe-extraction', {
+          const vibeResponse = await fetch('https://shopos-video-scene-detector-production.up.railway.app/api/gemini/vibe-extraction', {
             method: 'POST',
             body: formData
           });
@@ -124,7 +124,7 @@ const BatchGeminiAnalysis: React.FC<BatchGeminiAnalysisProps> = ({ results, onAn
           // Step 2: Image Prompts (frames from scene detection)
           setCurrentStep(`🖼️ Video ${videoNumber}/${totalVideos}: Generating image prompts from frames...`);
           
-          const imagePromptsResponse = await fetch('http://localhost:5001/api/gemini/image-prompts', {
+          const imagePromptsResponse = await fetch('https://shopos-video-scene-detector-production.up.railway.app/api/gemini/image-prompts', {
             method: 'POST',
             headers: { 'Content-Type': 'application/json' },
             body: JSON.stringify({
@@ -147,7 +147,7 @@ const BatchGeminiAnalysis: React.FC<BatchGeminiAnalysisProps> = ({ results, onAn
           // Step 3: Video Prompt (combines image prompts)
           setCurrentStep(`🎬 Video ${videoNumber}/${totalVideos}: Creating comprehensive video prompt...`);
           
-          const videoPromptResponse = await fetch('http://localhost:5001/api/gemini/video-prompt', {
+          const videoPromptResponse = await fetch('https://shopos-video-scene-detector-production.up.railway.app/api/gemini/video-prompt', {
             method: 'POST',
             headers: { 'Content-Type': 'application/json' },
             body: JSON.stringify({

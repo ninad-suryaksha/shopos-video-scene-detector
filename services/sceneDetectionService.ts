@@ -1,7 +1,7 @@
 import type { OutputJson } from '../types';
 
-// Backend API URL - update this if your backend runs on a different port
-const API_BASE_URL = 'http://localhost:5001/api';
+// Backend API URL - Railway deployment
+const API_BASE_URL = 'https://shopos-video-scene-detector-production.up.railway.app/api';
 
 export const analyzeVideoForScenes = async (videoFile: File, threshold: number = 15): Promise<OutputJson> => {
   try {
