@@ -1,0 +1,11 @@
+flask==3.0.0
+flask-cors==4.0.0
+scenedetect[opencv]==0.6.4
+opencv-python==4.9.0.80
+numpy==1.26.4
+werkzeug==3.0.1
+moviepy==1.0.3
+google-generativeai>=0.8.0
+
+
+

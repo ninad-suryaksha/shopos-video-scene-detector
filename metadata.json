@@ -1,0 +1,5 @@
+{
+  "name": "ShopOS Video Scene Detector",
+  "description": "An application that analyzes an uploaded video file using Gemini to detect scene changes and exports the analysis as a structured JSON file.",
+  "requestFramePermissions": []
+}
