@@ -903,8 +903,10 @@ def gemini_video_prompt():
         return jsonify({"error": str(e)}), 500
 
 if __name__ == '__main__':
+    # Get port from environment variable (Railway) or default to 5001 (local)
+    port = int(os.environ.get('PORT', 5001))
     print("Starting backend server...")
-    print("Server will be available at http://localhost:5001")
-    app.run(host='0.0.0.0', port=5001, debug=True)
+    print(f"Server will be available on port {port}")
+    app.run(host='0.0.0.0', port=port, debug=False)
 
 
